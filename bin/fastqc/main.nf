@@ -1,4 +1,4 @@
-//Quality analisis for the paired reads
+//Quality analisis 
 process FASTQC_QUALITY {
     tag "FASTQC"
 

@@ -15,7 +15,7 @@ process MARKDUPLICATE {
     picard \\
         -Xmx${avail_mem}M \\
         MarkDuplicates \\
-        --INPUT $bam \\
+        --INPUT ${sorted_bam} \\
         --OUTPUT ${sample_id}.dedup.bam \\
         --REFERENCE_SEQUENCE ${params.reference}\\
         --METRICS_FILE ${sample_id}.dedup.metrics.txt \\
