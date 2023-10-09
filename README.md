@@ -15,10 +15,6 @@ The recommended way is to clone it from github:
 git clone https://github.com/jimmlucas/DVT-WGS.git
 cd DVT-WGS
 ```
-
-
-
-# How to use it?
 ## Requirements
 
 The pipeline requires nextflow and Docker on the target system. These are often pre-installed on HPC systems.
