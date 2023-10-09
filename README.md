@@ -11,10 +11,10 @@ Pipeline for standardised Quality analisis, mapping and variant calls on yets ge
 ## Process:
 
 The recommended way is to clone it from github:
-
+```
 git clone https://github.com/jimmlucas/DVT-WGS.git
 cd DVT-WGS
-
+```
 
 
 
