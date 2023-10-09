@@ -4,7 +4,7 @@ process MARKDUPLICATE {
     publishDir "${params.out}/out/4-MarkDuplicate", mode: 'copy'
 
     input:
-    tuple val(sample_id), path(sorted_bam)
+    tuple val(sample_id), path("${sample_id}.bam")
     path(params.reference)
     
     output:
@@ -15,7 +15,7 @@ process MARKDUPLICATE {
     picard \\
         -Xmx${avail_mem}M \\
         MarkDuplicates \\
-        --INPUT ${sorted_bam} \\
+        --INPUT ${sample_id}.bam \\
         --OUTPUT ${sample_id}.dedup.bam \\
         --REFERENCE_SEQUENCE ${params.reference}\\
         --METRICS_FILE ${sample_id}.dedup.metrics.txt \\

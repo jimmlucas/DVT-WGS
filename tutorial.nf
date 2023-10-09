@@ -5,9 +5,6 @@ nextflow.enable.dsl=2
 
 checkInputParams()
 
-//  referenceBwaIndex = file("${reference}.{amb,ann,bwt,pac,sa}")
-//  referenceFaIndex  = file("${reference}.fai")
-//  referenceDict     = file("${refdir}/${reference.getBaseName()}.dict")
 reference         = file("${params.reference}")
 trimadapter       = file("${params.trimmomatic_ADAPTER}")
 
@@ -46,7 +43,7 @@ workflow {
     bwaIndex(params.reference)
 //Mapping Process- include samtools sorted and INDEX
     sam_ch = BWAMEM(trimmed_read_ch, params.reference)
-//MarkDuplicate- used Piccard 
+//MarkDuplicate- used bam results
     markduplicate_ch = MARKDUPLICATE(sam_ch, params.reference)
 }
 
