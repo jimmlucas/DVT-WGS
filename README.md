@@ -6,7 +6,7 @@
 [![license-shield]][license-url]
 
 Nextflow- Evolutionary divergence time / Divergence time estimation using WGS.
-Pipeline for standardised Quality analisis, mapping and variant calls on yets genomes. The pipeline take input: fastqs, followed by hard filtering and outputs: html, bams, and gvcfs for joint genotyping.
+Pipeline for standardised Quality analisis, mapping and variant calls on yeast genomes. The pipeline take input: fastqs, followed by hard filtering and outputs: html, bams, and gvcfs for joint genotyping.
 
 ## Process:
 
