@@ -19,9 +19,20 @@ cd DVT-WGS
 
 
 # How to use it?
-
 ## Requirements
 
+The pipeline requires nextflow and Docker on the target system. These are often pre-installed on HPC systems.
+
+It is recommended that you pre-pull the Docker imagen required by the workflow, there is a script "Dockerfile" in the workflow directory to help you with this, just run:
+
+```
+docker pull jimmlucas/dvt
+```
+If you want run the workflow in local location, you can create a new env. conda using the file "envWGS.yaml", just run:
+
+```
+conda env create -n newenv -f envWGS.yaml
+```
 ## Preparation of inputs
 
 [contributors-shield]: https://img.shields.io/github/contributors/jimmlucas/DVT-WGS.svg?style=for-the-badge
