@@ -8,10 +8,10 @@ process bwaIndex {
     path(params.reference)
 
     output:
-    path("*") , optional:true
+    path("*")
 
     script:
     """
-	bwa index -a bwtsw $params.reference
+	bwa index $params.reference
     """
 }

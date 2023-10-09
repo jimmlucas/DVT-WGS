@@ -31,6 +31,12 @@ conda env create -n newenv -f envWGS.yaml
 ```
 ## Preparation of inputs
 
+The pipeline requries a refence-genome, that geneme will be index using bwa and create a dictionary. These can be created at the firs step, just be sure move your reference- genome to the corrected directory, like this:
+
+```
+
+```
+
 [contributors-shield]: https://img.shields.io/github/contributors/jimmlucas/DVT-WGS.svg?style=for-the-badge
 
 [contributors-url]: https://github.com/jimmlucas/DVT-WGS/graphs/contributors
