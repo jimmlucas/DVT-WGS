@@ -3,7 +3,7 @@ LABEL authors="JIMM LUCAS" \
       description="Docker image containing all software requirements for this project (WGS-DivergenceTimesD)"
 
 # Install the conda environment
-COPY envnuevo.yaml /environment.yml
+COPY envWGS.yaml /environment.yml
 RUN conda env create -n env -f /environment.yml && conda clean -a
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
