@@ -26,7 +26,7 @@ include { TRIMREADS }                                       from './bin/trimming
 include { FASTQC_QUALITY as FASTQC_QUALITY_FINAL }          from './bin/fastqc/main' 
 include { bwaIndex }                                        from './bin/bwa/index/main'
 include { BWAMEM }                                          from './bin/bwa/mem/main'
-include { MARKDUPLICATE }                                   from './bin/picard/markduplicate.nf'
+include { MARKDUPLICATE }                                   from './bin/picard/markduplicate'
 
 
 
@@ -44,7 +44,12 @@ workflow {
 //Mapping Process- include samtools sorted and INDEX
     sam_ch = BWAMEM(trimmed_read_ch, params.reference)
 //MarkDuplicate- used bam results
-    markduplicate_ch = MARKDUPLICATE(sam_ch, params.reference)
+    bam_ch = sam_ch.map { tupla ->
+    def sample_id = tupla[0]
+    def bam_path = tupla[2]
+    return tuple(sample_id, bam_path)
+    }
+    markduplicate_ch = MARKDUPLICATE(bam_ch, params.reference)
 }
 
 
