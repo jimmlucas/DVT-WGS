@@ -1,7 +1,7 @@
 process MARKDUPLICATE {
     tag "Piccar MarkDuplicate $sample_id"
     
-    publishDir "${params.out}/out/4-MarkDuplicate", mode: 'copy'
+    publishDir "${params.outdir}/out/4-MarkDuplicate", mode: 'copy'
 
     input:
     tuple val(sample_id), path(bam)
