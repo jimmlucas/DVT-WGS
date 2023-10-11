@@ -49,7 +49,7 @@ workflow {
     def bam_path = tupla[2]
     return tuple(sample_id, bam_path)
     }
-    markduplicate_ch = MARKDUPLICATE(bam_ch, params.reference)
+    markduplicate_ch = MARKDUPLICATE(bam_ch)
 }
 
 

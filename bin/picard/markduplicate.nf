@@ -5,7 +5,6 @@ process MARKDUPLICATE {
 
     input:
     tuple val(sample_id), path(bam)
-    path(params.reference)
     
     output:
     tuple val(sample_id), path("${sample_id}.dedup.bam"), path("${sample_id}.dedup.metrics.txt")
@@ -13,10 +12,9 @@ process MARKDUPLICATE {
     script:
     """
     picard MarkDuplicates \
-        I ${bam} \
-        O ${sample_id}.dedup.bam \
-        REFERENCE_SEQUENCE ${params.reference} \
-        METRICS_FILE ${sample_id}.dedup.metrics.txt \
-        ASSUME_SORTED=TRUE
+        I=${bam} \
+        O=${sample_id}.dedup.bam \
+        METRICS_FILE=${sample_id}.dedup.metrics.txt \
+        ASSUME_SORTED=True
     """
 }
