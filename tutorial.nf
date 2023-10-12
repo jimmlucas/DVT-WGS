@@ -19,6 +19,7 @@ Configuration environemnt:
 """
     .stripIndent()
 
+
 //Call all the sub-work
 
 include { FASTQC_QUALITY as FASTQC_QUALITY_ORIGINAL }       from './bin/fastqc/main'
@@ -27,8 +28,7 @@ include { FASTQC_QUALITY as FASTQC_QUALITY_FINAL }          from './bin/fastqc/m
 include { bwaIndex }                                        from './bin/bwa/index/main'
 include { BWAMEM }                                          from './bin/bwa/mem/main'
 include { MARKDUPLICATE }                                   from './bin/picard/markduplicate'
-
-
+include { ADDORREPLACE }                                    from './bin/picard/addorreplace'
 
 workflow {
 //First Quality-control
@@ -50,6 +50,13 @@ workflow {
     return tuple(sample_id, bam_path)
     }
     markduplicate_ch = MARKDUPLICATE(bam_ch)
+//ADDorReplace - used MarkDuplicate result made a new array.
+    replace_ch = markduplicate_ch.map { tupla ->
+    def sample_id = tupla[0]
+    def replace_bam = tupla[1]
+    return tuple(sample_id, replace_bam)
+    }
+    addorreplace_ch = ADDORREPLACE(replace_ch)
 }
 
 
