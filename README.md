@@ -5,7 +5,7 @@
 [![Issues][issues-shield]][issues-url]
 [![license-shield]][license-url]
 
-Nextflow- Evolutionary divergence time / Divergence time estimation using WGS.
+Nextflow- Evolutionary divergence time / Divergence Time estimation using SNPs.
 Pipeline for standardised Quality analisis, mapping and variant calls on yeast genomes. The pipeline take input: fastqs, followed by hard filtering and outputs: html, bams, and gvcfs for joint genotyping.
 
 ## Process:
@@ -31,7 +31,7 @@ conda env create -n newenv -f envWGS.yaml
 ```
 ## Preparation of inputs
 
-The pipeline requries a refence-genome, that geneme will be index using bwa and create a dictionary. These can be created at the firs step, just be sure move your reference- genome to the corrected directory, like this:
+The pipeline requries a refence-genome, that geneme will be index using bwa and create a dictionary. These can be created at the firs step, just be sure move your reference- genome to the corrected directory.
 
 ```
 

@@ -3,8 +3,7 @@ process ADDORREPLACE {
     publishDir "${params.outdir}/out/5-ReplaceGroups", mode: 'copy'
 
     input:
-    tuple val(sample_id), path(duplicate)
-
+    tuple val(sample_id), path(replace)
 
     output:
     tuple val(sample_id), path("${sample_id}.RG.bam")
@@ -12,7 +11,7 @@ process ADDORREPLACE {
     script:
     """
     picard AddOrReplaceReadGroups \
-    INPUT=${duplicate} \
+    INPUT=${replace} \
     OUTPUT=${sample_id}.RG.bam \
     RGID=${sample_id} \
     RGLB=lib1 \
