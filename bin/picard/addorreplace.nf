@@ -12,14 +12,13 @@ process ADDORREPLACE {
     script:
     """
     picard AddOrReplaceReadGroups \
-    --INPUT=${duplicate} \
-    --OUTPUT=${sample_id}.RG.bam \
-    --RGID=${sample_id} \
-    --RGLB=lib1 \
-    --RGPL=ILLUMINA \
-    --RGPU=unit1 \
-    --RGSM=${sample_id} \
-    --CREATE_INDEX=TRUE \
-    --PROGRAM_GROUP_VERSION=String
+    INPUT=${duplicate} \
+    OUTPUT=${sample_id}.RG.bam \
+    RGID=${sample_id} \
+    RGLB=lib1 \
+    RGPL=ILLUMINA \
+    RGPU=unit1 \
+    RGSM=${sample_id} \
+    CREATE_INDEX=True
     """
 }
