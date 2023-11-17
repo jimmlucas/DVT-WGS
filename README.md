@@ -31,7 +31,13 @@ conda env create -n newenv -f envWGS.yaml
 ```
 ## Preparation of inputs
 
-The pipeline requries a refence-genome, that geneme will be index using bwa and create a dictionary. These can be created at the firs step, just be sure move your reference- genome to the corrected directory.
+If you alreday have the reads downloaded or perhaps you will use your data, ignore this line and go to the next step. However, if you plan to use reads form the DB, you can use a script "download_reads.sh" to download all the data, just nead a input list in format .txt "Acc_List.txt", then run the script in the root using: 
+
+'''
+bash ./bin/download_reads.sh 
+'''
+
+The pipeline requries a refence-genome, that geneme will be index using BWA and create a dictionary. These can be created at the firs step, just be sure move your reference- genome to the corrected directory.
 
 ```
 
