@@ -1,6 +1,6 @@
 FROM nfcore/base:1.9
 LABEL authors="JIMM LUCAS" \
-      description="Docker image containing all software requirements for this project (WGS-DivergenceTimesD)"
+      description="Docker image containing all software requirements for this project (WGS-DivergenceTimes)"
 
 # Install the conda environment
 COPY envWGS.yaml /environment.yml
