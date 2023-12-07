@@ -59,9 +59,9 @@ The workflow was classified in order to:
 * Quality-(Fastqc): Performing quality control on raw data
 * Trimming-(Trimmomatic): Reducing noise and adapters
 * Quality control-(Fastqc): Second round of quality control
-* Mapping-(BWA): 
-* Identification of Duplicate-(GATK): 
-* Filter of SNPs-(GATK): 
+* Mapping-(BWA): Mapping with the reference-genome
+* Identification of Duplicate-(GATK): Identification of duplicate and variant calling
+* Filter of SNPs-(GATK): Filtering only for SNPs
 
 After all these processes, you get a VCF with all the filtered SNPs. 
 
