@@ -75,7 +75,7 @@ nextflow run tutorial.nf -with-docker jimmlucas/dvt:wgs
 ```
 if you are using a local envieroment in conda:
 ```
-nextflow run tutotial.nf
+nextflow run tutorial.nf
 ```
 ## Determination of DVT using SNPS
 
