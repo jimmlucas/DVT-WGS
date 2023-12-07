@@ -56,9 +56,9 @@ The finality of this workflow, step by step using NextFlow, was to connect all t
 
 The workflow was classified in order to:
 
-* Quality-(Fastqc): quality control raw data
-* Trimming-(Trimmomatic): reduce the noise and adaptators
-* Quality control-(Fastqc): second quality control
+* Quality-(Fastqc): Performing quality control on raw data
+* Trimming-(Trimmomatic): Reducing noise and adapters
+* Quality control-(Fastqc): Second round of quality control
 * Mapping-(BWA): 
 * Identification of Duplicate-(GATK): 
 * Filter of SNPs-(GATK): 
