@@ -33,12 +33,12 @@ include { ADDORREPLACE }                                    from './bin/picard/a
 workflow {
 //First Quality-control
     read_ch = Channel.fromFilePairs(params.input, size: 2 )
-    FASTQC_QUALITY_ORIGINAL(read_ch.map{it -> it[1]})
+    fastqc_ch_original= FASTQC_QUALITY_ORIGINAL(read_ch.map{it -> it[1]})
 //Workflow-started
 //trim-reads
     trimmed_read_ch = TRIMREADS(read_ch, params.trimmomatic_ADAPTER)
 //Final Quality control after trimming
-   fastqc_ch_collect = FASTQC_QUALITY_FINAL(trimmed_read_ch.map{it -> it[1]})
+    FASTQC_QUALITY_FINAL(trimmed_read_ch.map { it -> it[1] })
 // INDEX reference genome
     bwaIndex(params.reference)
 //Mapping Process- include samtools sorted and INDEX
