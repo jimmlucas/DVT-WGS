@@ -24,11 +24,7 @@ It is recommended that you pre-pull the Docker imagen required by the workflow, 
 ```
 docker pull jimmlucas/dvt
 ```
-If you want to run the workflow in local location, you can create a new conda enviroment using the file "envWGS.yaml", just run:
 
-```
-conda env create -n newenv -f envWGS.yaml
-```
 ## Preparation of inputs
 
 ***Download***
@@ -73,9 +69,9 @@ Using Docker:
 ```
 nextflow run tutorial.nf -with-docker jimmlucas/dvt:wgs
 ```
-if you are using a local envieroment in conda:
+if you want to use a local envieroment in conda:
 ```
-nextflow run tutorial.nf
+nextflow run tutorial.nf -with-conda envWGS.yaml
 ```
 ## Determination of DVT using SNPS
 
